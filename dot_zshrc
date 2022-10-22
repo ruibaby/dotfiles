@@ -61,6 +61,7 @@ export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:/opt/homebrew/sbin"
 export PATH="$PATH:/Users/ryanwang/.jenv/bin"
 export PATH="$PATH:/Users/ryanwang/Workspace/sdk/flutter/bin"
+export PATH="$PATH:/Users/ryanwang/.cargo/bin"
 export PATH="$PATH:$PNPM_HOME"
 # path end
 
