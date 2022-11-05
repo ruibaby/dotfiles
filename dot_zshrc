@@ -47,8 +47,8 @@ alias lla="ll -a"
 alias vim="nvim"
 
 # node.js
-export LDFLAGS="-L/opt/homebrew/opt/node@16/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/node@16/include"
+export LDFLAGS="-L/opt/homebrew/opt/node@18/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/node@18/include"
 # node.js end
 
 # pnpm
