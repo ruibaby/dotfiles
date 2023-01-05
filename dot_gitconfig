@@ -16,7 +16,3 @@
 	cmt = commit -a -s
 [push]
 	autoSetupRemote = true
-[http]
-	proxy = socks5://127.0.0.1:6153
-[https]
-	proxy = socks5://127.0.0.1:6153
