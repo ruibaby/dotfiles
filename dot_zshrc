@@ -28,6 +28,7 @@ plugins=(
 	z
 	zsh-peco-history
 	zsh-proxy
+	zsh-vi-mode
 )
 # zsh plugins end
 
@@ -45,6 +46,9 @@ alias la="ls -A"
 alias ll="exa -l -g --icons"
 alias lla="ll -a"
 alias vim="nvim"
+alias main="git checkout main"
+alias upstream="git checkout upstream/main"
+alias desk="cd ~/Desktop"
 
 # node.js
 export LDFLAGS="-L/opt/homebrew/opt/node@18/lib"
@@ -62,6 +66,7 @@ export PATH="$PATH:/opt/homebrew/sbin"
 export PATH="$PATH:/Users/ryanwang/.jenv/bin"
 export PATH="$PATH:/Users/ryanwang/Workspace/sdk/flutter/bin"
 export PATH="$PATH:/Users/ryanwang/.cargo/bin"
+export PATH="$PATH:/opt/homebrew/opt/node@18/bin"
 export PATH="$PATH:$PNPM_HOME"
 # path end
 
@@ -69,8 +74,9 @@ export PATH="$PATH:$PNPM_HOME"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # php
-export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/php@8.0/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/php@8.0/include"
+export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/php@8.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/php@8.1/include"
 # php end
+
