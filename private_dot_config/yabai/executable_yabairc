@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+
+# Load the yabai script
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Global configuration
+yabai -m config external_bar off:40:0
+yabai -m config menubar_opacity 1.0
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
+yabai -m config display_arrangement_order default
+yabai -m config window_origin_display default
+yabai -m config window_placement second_child
+yabai -m config window_zoom_persist on
+yabai -m config window_shadow float
+yabai -m config window_animation_duration 0.0
+yabai -m config window_animation_easing ease_out_circ
+yabai -m config window_opacity_duration 0.0
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.90
+yabai -m config window_opacity off
+yabai -m config insert_feedback_color 0xffd75f5f
+yabai -m config split_ratio 0.50
+yabai -m config split_type auto
+yabai -m config auto_balance off
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 5
+yabai -m config layout bsp
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+yabai -m config mouse_drop_action swap
+yabai -m config external_bar all:0:45
+
+yabai -m rule --add app="^iStat*" sticky=on layer=above manage=off border=off
+yabai -m rule --add app="^System Preferences*" manage=off
+yabai -m rule --add app="^Stickies*" manage=off
+yabai -m rule --add app="^腾讯视频*" manage=off
+yabai -m rule --add app="^WPS Office*" manage=off
+yabai -m rule --add app="WeChat" title!="WeChat (Chats)" manage=off
+yabai -m rule --add app="WeCom" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
+
+echo "yabai configuration loaded.."
