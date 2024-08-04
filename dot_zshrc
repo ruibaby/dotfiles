@@ -41,18 +41,22 @@ else
 fi
 
 alias zshconfig="vim ~/.zshrc"
+alias yabaiconfig="vim ~/.config/yabai/yabairc"
+alias skhdconfig="vim ~/.config/skhd/skhdrc"
 alias ls="ls -p -G"
 alias la="ls -A"
-alias ll="exa -l -g --icons"
+alias ll="eza -l -g --icons"
 alias lla="ll -a"
 alias vim="nvim"
 alias main="git checkout main"
 alias upstream="git checkout upstream/main"
+alias merge="git merge upstream/main"
 alias desk="cd ~/Desktop"
+alias i="cd ~/Workspace/github/ruibaby"
 
 # node.js
-export LDFLAGS="-L/opt/homebrew/opt/node@18/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/node@18/include"
+export LDFLAGS="-L/opt/homebrew/opt/node@20/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/node@20/include"
 # node.js end
 
 # pnpm
@@ -63,20 +67,37 @@ export PNPM_HOME="/Users/ryanwang/Library/pnpm"
 export PATH="$PATH:/Users/ryanwang/bin"
 export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:/opt/homebrew/sbin"
-export PATH="$PATH:/Users/ryanwang/.jenv/bin"
 export PATH="$PATH:/Users/ryanwang/Workspace/sdk/flutter/bin"
 export PATH="$PATH:/Users/ryanwang/.cargo/bin"
-export PATH="$PATH:/opt/homebrew/opt/node@18/bin"
+export PATH="$PATH:/opt/homebrew/opt/node@20/bin"
 export PATH="$PATH:$PNPM_HOME"
+export PATH="$PATH:/Users/ryanwang/Library/Python/3.9/bin"
 # path end
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # php
-export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/php@8.1/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/php@8.1/include"
+#export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+#export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+#export LDFLAGS="-L/opt/homebrew/opt/php@8.1/lib"
+#export CPPFLAGS="-I/opt/homebrew/opt/php@8.1/include"
 # php end
 
+
+# bun completions
+[ -s "/Users/ryanwang/.bun/_bun" ] && source "/Users/ryanwang/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Wasmer
+export WASMER_DIR="/Users/ryanwang/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
