@@ -38,13 +38,18 @@ yabai -m config external_bar all:0:45
 
 yabai -m rule --add app="^iStat*" sticky=on layer=above manage=off border=off
 yabai -m rule --add app="^System Preferences*" manage=off
+yabai -m rule --add app="^Finder*" manage=off
 yabai -m rule --add app="^Stickies*" manage=off
 yabai -m rule --add app="^腾讯视频*" manage=off
+yabai -m rule --add app="^企业微信*" manage=off
 yabai -m rule --add app="^WPS Office*" manage=off
+yabai -m rule --add title="^wecom-temp*" manage=off
 yabai -m rule --add app="WeChat" title!="WeChat (Chats)" manage=off
 yabai -m rule --add app="WeCom" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
+yabai -m rule --add title="Archive Utility" manage=off
+yabai -m rule --add title="Welcome to WebStorm" manage=off
 
 echo "yabai configuration loaded.."

@@ -28,7 +28,6 @@ plugins=(
 	z
 	zsh-peco-history
 	zsh-proxy
-	zsh-vi-mode
 )
 # zsh plugins end
 
@@ -41,8 +40,8 @@ else
 fi
 
 alias zshconfig="vim ~/.zshrc"
-alias yabaiconfig="vim ~/.config/yabai/yabairc"
-alias skhdconfig="vim ~/.config/skhd/skhdrc"
+alias ghosttyconfig="vim ~/.config/ghostty/config"
+alias sshconfig="vim ~/.ssh/config"
 alias ls="ls -p -G"
 alias la="ls -A"
 alias ll="eza -l -g --icons"
@@ -54,35 +53,50 @@ alias merge="git merge upstream/main"
 alias desk="cd ~/Desktop"
 alias i="cd ~/Workspace/github/ruibaby"
 
-# node.js
-export LDFLAGS="-L/opt/homebrew/opt/node@20/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/node@20/include"
-# node.js end
+# corepack alias
+alias yarn="corepack yarn"
+alias yarnpkg="corepack yarnpkg"
+alias pnpm="corepack pnpm"
+alias pnpx="corepack pnpx"
+alias npm="corepack npm"
+alias npx="corepack npx"
+# corepack alias end
 
-# pnpm
-export PNPM_HOME="/Users/ryanwang/Library/pnpm"
-# pnpm end
+# node.js
+export LDFLAGS="-L/opt/homebrew/opt/node@22/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/node@22/include"
+# node.js end
 
 # path
 export PATH="$PATH:/Users/ryanwang/bin"
 export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:/opt/homebrew/sbin"
-export PATH="$PATH:/Users/ryanwang/Workspace/sdk/flutter/bin"
 export PATH="$PATH:/Users/ryanwang/.cargo/bin"
-export PATH="$PATH:/opt/homebrew/opt/node@20/bin"
-export PATH="$PATH:$PNPM_HOME"
+export PATH="$PATH:/opt/homebrew/opt/node@22/bin"
 export PATH="$PATH:/Users/ryanwang/Library/Python/3.9/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+# Android SDK
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+# Android SDK end
+
+# firebase
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+# firebase end
 # path end
+
+# pnpm
+export PNPM_HOME="/Users/ryanwang/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# php
-#export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
-#export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
-#export LDFLAGS="-L/opt/homebrew/opt/php@8.1/lib"
-#export CPPFLAGS="-I/opt/homebrew/opt/php@8.1/include"
-# php end
 
 
 # bun completions
@@ -92,12 +106,12 @@ export PATH="$PATH:/Users/ryanwang/Library/Python/3.9/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Wasmer
-export WASMER_DIR="/Users/ryanwang/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/ryanwang/.dart-cli-completion/zsh-config.zsh ]] && . /Users/ryanwang/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
